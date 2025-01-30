@@ -2,6 +2,9 @@
   "name": "@juancarllos-ui/react-native",
   "version": "1.0.0",
   "description": "Componentes mobile",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "style": "prettier . --check src/**/*.{ts,tsx,jsx}",
     "style:fix": "prettier . --write src/**/*.{ts,tsx,jsx}",
