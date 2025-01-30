@@ -41,6 +41,8 @@
   "dependencies": {
     "@storybook/addon-actions": "^8.5.2",
     "@storybook/addon-links": "^8.5.2",
-    "@storybook/react-native": "^8.5.2"
+    "@storybook/react-native": "^8.5.2",
+    "react": "^19.0.0",
+    "react-native": "^0.77.0"
   }
 }
