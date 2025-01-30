@@ -16,12 +16,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock.json'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
 
-      - run: yarn ci
+      - run: npm run ci
 
       - name: Deploy storybook
-        run: yarn deploy-storybook -- --ci --existing-output-dir=storybook-static
+        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
