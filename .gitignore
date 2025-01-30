@@ -29,6 +29,11 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
+# Package files
+.husky/
+.husky/pre-commit
+
+
 # Android/IJ
 #
 .classpath

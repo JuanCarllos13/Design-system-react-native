@@ -43,8 +43,8 @@ root.render(
 Caso você esteja usando um projeto Next.js, você seguir o seguinte passo: Dentro do arquivo `_document.tsx`
 
 ```jsx
-import { getCssText } from "@juancarllos-ui/react-native";
-import { Html, Head, Main, NextScript } from "next/document";
+import { getCssText } from '@juancarllos-ui/react-native';
+import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
@@ -68,13 +68,13 @@ Então você está pronto para usar `@juancarllos-ui/react-native` e pode import
 Por exemplo, para usar o componente `Button`, você precisa importá-lo:
 
 ```jsx
-import { Button } from "@juancarllos-ui/react-native";
+import { Button } from '@juancarllos-ui/react-native';
 ```
 
 Em seguida, você pode usar o botão em seu aplicativo:
 
 ```jsx
-<Button onClick={() => alert("Hello World!")}>Hello world!</Button>
+<Button onClick={() => alert('Hello World!')}>Hello world!</Button>
 ```
 
 ### Support
@@ -86,7 +86,6 @@ Caso tenha alguma ideia ou sugestão para melhorar a biblioteca, por favor, entr
 LinkedIn: https://www.linkedin.com/in/juancarlos13/
 
 Instagram: https://www.instagram.com/juan.carllos_/
-
 
 GitHub: https://github.com/JuanCarllos13
 
