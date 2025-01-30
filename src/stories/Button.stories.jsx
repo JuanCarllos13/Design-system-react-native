@@ -2,7 +2,7 @@ import { fn } from '@storybook/test';
 
 import { View } from 'react-native';
 
-import { Button } from './Button';
+import { Button } from '../components/Button';
 
 const meta = {
   title: 'Example/Button',
