@@ -22,7 +22,7 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: '**/yarn.lock'
 
-      - run: npm ci
+      - run: yarn ci
 
       - name: Publish to NPM
         run: |
