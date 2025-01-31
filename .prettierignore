@@ -7,3 +7,4 @@ logs
 .vscode
 .github
 eslint.config.mjs
+tsconfig.json
