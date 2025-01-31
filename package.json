@@ -10,14 +10,13 @@
     "style:fix": "prettier --write 'src/**/*.{ts,tsx,jsx,mdx}'",
     "lint:fix": "eslint src --fix",
     "lint": "eslint 'src/**/*.{ts,tsx,jsx,mdx}'",
-    "prepare": "husky",
+    "prepare": "./script/prepare.sh",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
-    "@commitlint/cz-commitlint": "^19.6.1",
     "@eslint/js": "^9.19.0",
     "@storybook/addon-docs": "^8.5.2",
     "@storybook/addon-essentials": "^8.5.2",
@@ -28,7 +27,9 @@
     "@storybook/react-native-web-vite": "^8.5.2",
     "@storybook/storybook-deployer": "^2.8.12",
     "@storybook/test": "^8.5.2",
-    "commitlint": "^19.6.1",
+    "commitlint": "^15.0.0",
+    "conventional-changelog-conventionalcommits": "^4.6.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.19.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import-helpers": "^2.0.1",
@@ -39,7 +40,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-storybook": "^0.11.2",
     "globals": "^15.14.0",
-    "husky": "^9.1.7",
+    "husky": "^7.0.4",
     "prettier": "^3.4.2",
     "prop-types": "^15.8.1",
     "react-native-web": "^0.19.13",
@@ -54,5 +55,21 @@
     "@storybook/react-native": "^8.5.2",
     "react": "^19.0.0",
     "react-native": "^0.77.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,jsx,mdx}'": [
+      "yarn style",
+      "yarn lint"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
