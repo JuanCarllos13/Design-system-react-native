@@ -1,22 +1,18 @@
 import { fn } from '@storybook/test';
-
 import { View } from 'react-native';
-
-import { Button } from '../components/Button';
+import { Button } from '../components/Button/Button';
+import { ArrowRight, ArrowLeft } from 'phosphor-react-native';
 
 const meta = {
   title: 'Example/Button',
   component: Button,
   decorators: [
     (Story) => (
-      <View style={{ flex: 1, alignItems: 'flex-start' }}>
+      <View>
         <Story />
       </View>
     ),
   ],
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // Use `fn` to spy on the onPress arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onPress: fn() },
 };
 
@@ -24,27 +20,47 @@ export default meta;
 
 export const Primary = {
   args: {
-    primary: true,
-    label: 'Button',
+    label: 'Primary Button',
+    children: (
+      <Button>
+        <Button.Title>Entrar</Button.Title>
+      </Button>
+    ),
   },
 };
 
-export const Secondary = {
+export const Loading = {
   args: {
-    label: 'Button',
+    isLoading: true,
+    label: 'Loading...',
+  },
+  children: (
+    <Button isLoading>
+      <Button.Title>Entrar</Button.Title>
+    </Button>
+  ),
+};
+
+export const IconButtonLeft = {
+  args: {
+    label: 'Button with Icon on the left',
+    children: (
+      <Button>
+        <Button.Icon icon={ArrowLeft} />
+        <Button.Title>Entrar</Button.Title>
+      </Button>
+    ),
   },
 };
 
-export const Large = {
+export const IconButtonRight = {
   args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small = {
-  args: {
-    size: 'small',
-    label: 'Button',
+    label: 'Button with Icon on the right',
+    children: (
+      <Button>
+        <Button.Title>Entrar</Button.Title>
+        <Button.Icon icon={ArrowRight} />
+      </Button>
+    ),
   },
 };

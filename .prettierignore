@@ -1,0 +1,10 @@
+package.json
+dist
+dist/**
+node_modules
+docs
+logs
+.vscode
+.github
+eslint.config.mjs
+tsconfig.json

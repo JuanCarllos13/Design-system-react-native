@@ -14,11 +14,11 @@ const config = {
     name: '@storybook/react-native-web-vite',
     options: {},
   },
-  viteFinal: (config, {configType}) => {
-    if(configType === 'PRODUCTION'){
-      config.base = '/Design-system-react-native/'
+  viteFinal: (config, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      config.base = '/Design-system-react-native/';
     }
-    return config
-  }
+    return config;
+  },
 };
 export default config;
