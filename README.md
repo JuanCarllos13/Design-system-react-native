@@ -1,6 +1,6 @@
 <Meta title="Home" />
 
-# Design System React Native by Juan Carlos
+# Design System React Native
 
 **Criado por Juan Carlos**
 

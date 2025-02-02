@@ -8,3 +8,4 @@ logs
 .github
 eslint.config.mjs
 tsconfig.json
+README.md

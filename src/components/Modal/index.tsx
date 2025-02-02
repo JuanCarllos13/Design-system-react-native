@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Modal,
   Animated,
@@ -19,7 +19,7 @@ interface BottomSheetModalProps {
 }
 
 const BottomSheetModal: React.FC<BottomSheetModalProps> = ({
-  visible,
+  visible = false,
   onClose,
   children,
 }) => {
@@ -47,7 +47,7 @@ const BottomSheetModal: React.FC<BottomSheetModalProps> = ({
     }, 300);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (visible) {
       setShowModal(true);
       openModal();
