@@ -1,4 +1,5 @@
 import { fn } from '@storybook/test';
+import React from 'react';
 import { View } from 'react-native';
 import { Button } from '../components/Button/Button';
 import { ArrowRight, ArrowLeft } from 'phosphor-react-native';

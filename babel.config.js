@@ -6,7 +6,9 @@ module.exports = {
       {
         root: ['./src'],
         alias: {
-          '@styles': './src/styles', // Ajuste para o caminho correto
+          '@assets': './src/assets',
+          '@components': './src/components',
+          '@styles': './src/styles',
         },
       },
     ],
