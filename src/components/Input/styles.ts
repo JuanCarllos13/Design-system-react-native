@@ -9,18 +9,18 @@ export const styles = StyleSheet.create({
   containerInput: {
     flexDirection: 'row',
     borderBottomWidth: 1,
-    borderColor: colors.black,
+    borderColor: colors.gray[100],
     borderRadius: 6,
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   inputText: {
-    color: colors.black,
+    color: colors.gray[100],
     width: '100%',
     paddingLeft: 4,
   },
   text: {
-    color: colors.black,
+    color: colors.gray[100],
     fontSize: 16,
     fontFamily: 'bold',
   },
