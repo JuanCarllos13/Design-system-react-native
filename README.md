@@ -1,92 +1,71 @@
 <Meta title="Home" />
 
-# Criado por Juan Carlos
+# Design System React Native by Juan Carlos
 
-[Open Github Project](https://github.com/JuanCarllos13/Design-System)
+**Criado por Juan Carlos**
 
-[Open Link Project](https://juancarllos13.github.io/Design-System/)
+[Visite o projeto no GitHub](https://github.com/JuanCarllos13/Design-system-react-native)
 
-## Getting Started
+[Veja o projeto em execução](https://juancarllos13.github.io/Design-system-react-native/)
 
-<br />
+## Descrição
 
-#### Basic Template
+Este projeto é uma biblioteca de componentes React Native, desenvolvida para acelerar o processo de criação de interfaces com um design consistente e reutilizável. A biblioteca oferece uma coleção de componentes prontos para uso que seguem as melhores práticas de desenvolvimento, garantindo acessibilidade e alta performance.
 
-Você pode criar um novo aplicativo react-native usando [create-react-native-app](https://facebook.github.io/create-react-native-app/) .
+## Instalação
 
-```sh
-npx create-react-native-app my-app
-```
+### Adicionar ao seu projeto React Native
 
-### Adicionar `@juancarllos-ui/react-native` a um aplicativo existente
+Para começar a usar a biblioteca `@juancarllos-ui/react-native`, basta adicionar a dependência ao seu projeto.
 
-Primeiro de tudo, você precisa adicionar a dependência `@juancarllos-ui/react-native` ao seu projeto.
+Com o **npm**:
 
-```sh
+```bash
 npm install @juancarllos-ui/react-native
 ```
 
-Para usar `@juancarllos-ui/react-native`, você deve agrupar o componente raiz do seu aplicativo no ThemeProvider.
-Você provavelmente encontrará esse componente em `src/index.js`:
+Ou com o **yarn**:
 
-```jsx
-import { ThemeProvider } from '@juancarllos-ui/react-native';
-...
-const root = createRoot(document.getElementById("root"));
-root.render(
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
-);
+```bash
+yarn add @juancarllos-ui/react-native
 ```
 
-Caso você esteja usando um projeto Next.js, você seguir o seguinte passo: Dentro do arquivo `_document.tsx`
+## Uso
 
-```jsx
-import { getCssText } from '@juancarllos-ui/react-native';
-import { Html, Head, Main, NextScript } from 'next/document';
+Após a instalação, você pode começar a utilizar os componentes da biblioteca diretamente no seu projeto. Abaixo está um exemplo básico de como usar um dos componentes fornecidos.
 
-export default function Document() {
+```tsx
+import { AnimatedButton } from '@juancarllos-ui/react-native';
+
+const App = () => {
   return (
-    <Html lang="en">
-      <Head>
-        <style
-          id="stitches"
-          dangerouslySetInnerHTML={{ __html: getCssText() }}
-        />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
+    <AnimatedButton title="Clique Aqui" onPress={() => console.log("Botão pressionado!")} />
   );
-}
+};
 ```
 
-Então você está pronto para usar `@juancarllos-ui/react-native` e pode importar o(s) componente(s) desejado(s) em seu aplicativo:<br />
-Por exemplo, para usar o componente `Button`, você precisa importá-lo:
+## Contribuições
 
-```jsx
-import { Button } from '@juancarllos-ui/react-native';
-```
+Estou sempre em busca de melhorias para minha biblioteca, adicionando novos recursos e funcionalidades. Caso tenha sugestões ou ideias para melhorias, ou queira contribuir com o projeto, fique à vontade para abrir um **pull request** ou **issue** no GitHub.
 
-Em seguida, você pode usar o botão em seu aplicativo:
+Se você deseja contribuir, siga as etapas abaixo:
 
-```jsx
-<Button onClick={() => alert('Hello World!')}>Hello world!</Button>
-```
+1. Faça um fork deste repositório.
+2. Crie uma branch para sua funcionalidade (`git checkout -b feature/nova-funcionalidade`).
+3. Faça as alterações e commit (`git commit -am 'Adicionando nova funcionalidade'`).
+4. Faça o push para a sua branch (`git push origin feature/nova-funcionalidade`).
+5. Abra um Pull Request.
 
-### Support
+## Suporte
 
-Estou buscondo melhorar minha biblioteca, adicionando novos recursos e funcionalidades para garantir que ela esteja sempre atualizada com as últimas tendências e tecnologias. Além disso, aprecio muito sugestões e ideias dos usuários, pois isso me ajuda a tornar minha biblioteca ainda melhor.
+Estou sempre aberto a sugestões e comentários! Para qualquer dúvida, feedback ou ajuda, entre em contato comigo:
 
-Caso tenha alguma ideia ou sugestão para melhorar a biblioteca, por favor, entre em contato comigo através das minhas redes sociais:
+- **LinkedIn**: [Juan Carlos](https://www.linkedin.com/in/juancarlos13/)
+- **Instagram**: [@juan.carllos_](https://www.instagram.com/juan.carllos_/)
+- **GitHub**: [JuanCarlos13](https://github.com/JuanCarllos13)
 
-LinkedIn: https://www.linkedin.com/in/juancarlos13/
+Agradeço por utilizar minha biblioteca e espero que ela seja útil no seu projeto! :)
 
-Instagram: https://www.instagram.com/juan.carllos_/
+## Licença
 
-GitHub: https://github.com/JuanCarllos13
-
-Agradeço por utilizar minha biblioteca e espero que ela ajude.
+Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](LICENSE) para mais informações.

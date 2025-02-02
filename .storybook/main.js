@@ -18,6 +18,7 @@ const config = {
     if (configType === 'PRODUCTION') {
       config.base = '/Design-system-react-native/';
     }
+
     return config;
   },
 };

@@ -1,6 +1,6 @@
 {
   "name": "@juancarllos-ui/react-native",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "description": "Componentes mobile",
   "publishConfig": {
     "access": "public"
@@ -29,10 +29,12 @@
     "@storybook/addon-interactions": "^8.5.2",
     "@storybook/addon-onboarding": "^8.5.2",
     "@storybook/blocks": "^8.5.2",
+    "@storybook/manager-api": "^8.5.3",
     "@storybook/react": "^8.5.2",
     "@storybook/react-native-web-vite": "^8.5.2",
     "@storybook/storybook-deployer": "^2.8.12",
     "@storybook/test": "^8.5.2",
+    "@storybook/theming": "^8.5.3",
     "@testing-library/react-native": "^13.0.1",
     "@types/jest": "^29.5.14",
     "@types/prop-types": "^15.7.14",

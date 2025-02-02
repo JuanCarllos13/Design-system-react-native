@@ -5,6 +5,7 @@ import AnimatedButton from '../components/ButtonAnimated/ButtonAnimated';
 const meta = {
   title: 'Example/AnimatedButton',
   component: AnimatedButton,
+  tags: ['autodocs'],
   decorators: [
     (Story) => (
       <View style={{ padding: 20, alignItems: 'center' }}>

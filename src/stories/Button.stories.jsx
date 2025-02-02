@@ -7,6 +7,7 @@ import { ArrowRight, ArrowLeft } from 'phosphor-react-native';
 const meta = {
   title: 'Example/Button',
   component: Button,
+  tags: ['autodocs'],
   decorators: [
     (Story) => (
       <View>
@@ -27,6 +28,7 @@ export const Primary = {
         <Button.Title>Entrar</Button.Title>
       </Button>
     ),
+    args: { onPress: fn() },
   },
 };
 

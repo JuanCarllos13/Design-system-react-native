@@ -5,6 +5,7 @@ import { Input } from '../components/Input';
 const meta = {
   title: 'Example/Input',
   component: Input,
+  tags: ['autodocs'],
   decorators: [
     (Story) => (
       <View style={{ padding: 20 }}>
