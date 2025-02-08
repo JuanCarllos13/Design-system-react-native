@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { styles } from './styles';
 import { IconProps as TablerIconProps } from 'phosphor-react-native';
-import { colors } from '@styles/colors';
+import { colors } from '../../styles/colors';
 
 type ButtonProps = TouchableOpacityProps & {
   isLoading?: boolean;
