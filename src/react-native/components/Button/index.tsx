@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import {
   TouchableOpacity,
   TouchableOpacityProps,
@@ -14,6 +14,9 @@ type ButtonProps = TouchableOpacityProps & {
   isLoading?: boolean;
 };
 
+type TitleProps = TextProps & {
+  children: ReactNode;
+};
 function Button({ children, style, isLoading = false, ...rest }: ButtonProps) {
   return (
     <TouchableOpacity
@@ -35,8 +38,12 @@ function Button({ children, style, isLoading = false, ...rest }: ButtonProps) {
   );
 }
 
-function Title({ children }: TextProps) {
-  return <Text style={styles.title}>{children}</Text>;
+function Title({ children, ...rest }: TitleProps) {
+  return (
+    <Text style={styles.title} {...rest}>
+      {children}
+    </Text>
+  );
 }
 
 type IconProps = TablerIconProps & {
@@ -50,5 +57,4 @@ function Icon({ icon: Icon }: IconProps) {
 Button.Title = Title;
 Button.Icon = Icon;
 
-Button.displayName = 'Button';
 export { Button };

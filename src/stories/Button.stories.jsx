@@ -1,7 +1,7 @@
 import { fn } from '@storybook/test';
 import React from 'react';
 import { View } from 'react-native';
-import { Button } from '../react-native';
+import { Button } from '../react-native/components/Button';
 import { ArrowRight, ArrowLeft } from 'phosphor-react-native';
 
 const meta = {

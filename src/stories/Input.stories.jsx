@@ -1,6 +1,6 @@
 import { fn } from '@storybook/test';
 import { View } from 'react-native';
-import { Input } from '../react-native';
+import { Input } from '../react-native/components/Input';
 
 const meta = {
   title: 'Example/Input',
