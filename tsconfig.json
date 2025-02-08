@@ -1,28 +1,30 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "target": "es5",
-    "lib": ["dom", "es6"],
-    "jsx": "react",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "isolatedModules": true,
-    "noEmit": true,
-    "resolveJsonModule": true,
-    "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
-			"@assets/*": ["./src/assets/*"],
-			"@components/*": ["./src/components/*"],
-			"@pages/*": ["./src/pages/*"],
-			"@storage/*": ["./src/storage/*"],
-			"@styles/*": ["src/react-native/styles/*"],
-			"@utils/*": ["./src/utils/*"],
-			"@service/*": ["./src/service/*"],
-			"@contexts/*": ["./src/contexts/*"]
-		}
-  },
-  "include": ["src/**/*"]
+      "design-system-react-native": ["./src/index"]
+    },
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "resolvePackageJsonImports": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "verbatimModuleSyntax": true
+  }
 }

@@ -29,11 +29,6 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
-# Package files
-.husky/
-.husky/pre-commit
-
-
 # Android/IJ
 #
 .classpath
@@ -85,6 +80,3 @@ lib/
 # React Native Codegen
 ios/generated
 android/generated
-
-*storybook.log
-storybook-static
