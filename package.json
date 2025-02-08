@@ -5,6 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": ["src/react-native"],
   "scripts": {
     "style": "prettier . --check 'src/**/*.{ts,tsx,jsx,mdx}'",
     "style:fix": "prettier --write 'src/**/*.{ts,tsx,jsx,mdx}'",

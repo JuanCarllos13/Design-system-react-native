@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import { Button } from './Button';
+import { Button } from './';
 import { ArrowRight } from 'phosphor-react-native';
 
 describe('Button Component', () => {
@@ -62,7 +62,6 @@ describe('Button Component', () => {
         <Button.Title>Click Me</Button.Title>
       </Button>
     );
-    debug();
     const button = getByTestId('button');
 
     expect(button).toBeDisabled();
