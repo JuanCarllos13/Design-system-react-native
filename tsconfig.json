@@ -18,7 +18,7 @@
 			"@components/*": ["./src/components/*"],
 			"@pages/*": ["./src/pages/*"],
 			"@storage/*": ["./src/storage/*"],
-			"@styles/*": ["./src/styles/*"],
+			"@styles/*": ["src/react-native/styles/*"],
 			"@utils/*": ["./src/utils/*"],
 			"@service/*": ["./src/service/*"],
 			"@contexts/*": ["./src/contexts/*"]
