@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text } from 'react-native';
-import BottomSheetModal from '../components/Modal/';
-import { Button } from '../components/Button/Button';
+import { Button } from '../components/Button';
+import { BottomSheetModal } from '@components/Modal';
 
 export default {
   title: 'Example/BottomSheetModal',

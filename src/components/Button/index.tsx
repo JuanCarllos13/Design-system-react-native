@@ -50,4 +50,5 @@ function Icon({ icon: Icon }: IconProps) {
 Button.Title = Title;
 Button.Icon = Icon;
 
+Button.displayName = 'Button';
 export { Button };
