@@ -2682,6 +2682,52 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@juancarllos-ui/react-native-example@workspace:packages/react-native/example":
+  version: 0.0.0-use.local
+  resolution: "@juancarllos-ui/react-native-example@workspace:packages/react-native/example"
+  dependencies:
+    "@babel/core": ^7.20.0
+    "@expo/metro-runtime": ~4.0.1
+    "@juancarllos-ui/react-native": "*"
+    expo: ~52.0.31
+    expo-status-bar: ~2.0.1
+    react: 18.3.1
+    react-dom: 18.3.1
+    react-native: 0.76.7
+    react-native-builder-bob: ^0.37.0
+    react-native-web: ~0.19.13
+  languageName: unknown
+  linkType: soft
+
+"@juancarllos-ui/react-native@*, @juancarllos-ui/react-native@workspace:packages/react-native":
+  version: 0.0.0-use.local
+  resolution: "@juancarllos-ui/react-native@workspace:packages/react-native"
+  dependencies:
+    "@commitlint/config-conventional": ^17.0.2
+    "@evilmartians/lefthook": ^1.5.0
+    "@react-native/eslint-config": ^0.73.1
+    "@release-it/conventional-changelog": ^9.0.2
+    "@types/jest": ^29.5.5
+    "@types/react": ^18.2.44
+    commitlint: ^17.0.2
+    del-cli: ^5.1.0
+    eslint: ^8.51.0
+    eslint-config-prettier: ^9.0.0
+    eslint-plugin-prettier: ^5.0.1
+    jest: ^29.7.0
+    phosphor-react-native: ^2.3.1
+    prettier: ^3.0.3
+    react: 18.3.1
+    react-native: 0.76.7
+    react-native-builder-bob: ^0.37.0
+    release-it: ^17.10.0
+    typescript: ^5.2.2
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  languageName: unknown
+  linkType: soft
+
 "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1":
   version: 5.1.1-v1
   resolution: "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1"
@@ -5674,50 +5720,6 @@ __metadata:
   checksum: f56a05e182c2c195071385455956b0c4106fe14e36245b00c689ceef8e8ab639235176a96977ba7c74afb173317fac2e0ec6ec7a1c6d1e6eaa401c586c714132
   languageName: node
   linkType: hard
-
-"design-system-react-native-example@workspace:example":
-  version: 0.0.0-use.local
-  resolution: "design-system-react-native-example@workspace:example"
-  dependencies:
-    "@babel/core": ^7.20.0
-    "@expo/metro-runtime": ~4.0.1
-    expo: ~52.0.31
-    expo-status-bar: ~2.0.1
-    react: 18.3.1
-    react-dom: 18.3.1
-    react-native: 0.76.7
-    react-native-builder-bob: ^0.37.0
-    react-native-web: ~0.19.13
-  languageName: unknown
-  linkType: soft
-
-"design-system-react-native@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "design-system-react-native@workspace:."
-  dependencies:
-    "@commitlint/config-conventional": ^17.0.2
-    "@evilmartians/lefthook": ^1.5.0
-    "@react-native/eslint-config": ^0.73.1
-    "@release-it/conventional-changelog": ^9.0.2
-    "@types/jest": ^29.5.5
-    "@types/react": ^18.2.44
-    commitlint: ^17.0.2
-    del-cli: ^5.1.0
-    eslint: ^8.51.0
-    eslint-config-prettier: ^9.0.0
-    eslint-plugin-prettier: ^5.0.1
-    jest: ^29.7.0
-    prettier: ^3.0.3
-    react: 18.3.1
-    react-native: 0.76.7
-    react-native-builder-bob: ^0.37.0
-    release-it: ^17.10.0
-    typescript: ^5.2.2
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  languageName: unknown
-  linkType: soft
 
 "destroy@npm:1.2.0":
   version: 1.2.0
@@ -11412,6 +11414,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"phosphor-react-native@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "phosphor-react-native@npm:2.3.1"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-svg: "*"
+  checksum: 28135212824a1dbb522e8c87ce0e77f1c0a1e5aad3f609aa98fe7d025d208f78878de4fb121e6cd9b1fb454043f67b1598a7ef191ac6ad27b355fcff9e7d176a
+  languageName: node
+  linkType: hard
+
 "picocolors@npm:^1.0.0, picocolors@npm:^1.1.1":
   version: 1.1.1
   resolution: "picocolors@npm:1.1.1"
@@ -12466,6 +12479,12 @@ __metadata:
   checksum: 3ea587b981a19016297edb96d1ffe48af7e6af69660e3b371dbfc73722a73a0b0e9be5c88089fbeeb866c389c1098e07f64929c7414290504b855f54f901ab10
   languageName: node
   linkType: hard
+
+"root-workspace-0b6124@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "root-workspace-0b6124@workspace:."
+  languageName: unknown
+  linkType: soft
 
 "run-applescript@npm:^7.0.0":
   version: 7.0.0

@@ -1,4 +1,4 @@
-import { multiply } from 'design-system-react-native';
+import { multiply, Button } from '@juancarllos-ui/react-native';
 import { Text, View, StyleSheet } from 'react-native';
 
 const result = multiply(3, 7);
@@ -7,6 +7,10 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
+
+      <Button>
+        <Button.Title>Testando</Button.Title>
+      </Button>
     </View>
   );
 }
@@ -14,7 +18,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
   },
 });

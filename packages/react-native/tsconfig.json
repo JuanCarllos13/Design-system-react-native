@@ -2,11 +2,11 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "design-system-react-native": ["./src/index"]
+      "@juancarllos-ui/react-native": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "lib": ["ESNext"],
@@ -25,6 +25,6 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": false
   }
 }
