@@ -1,6 +1,6 @@
 {
-  "name": "@juancarllos-ui/react-native",
-  "version": "1.2.0",
+  "name": "design-system-react-native",
+  "version": "0.1.0",
   "description": "Componentes Mobile",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -37,7 +37,6 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace @juancarllos-ui/react-native-example",
     "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -52,7 +51,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://https://github.com/JuanCarllos13/Design-system-react-native.git"
+    "url": "git+https://github.com/JuanCarllos13/Design-system-react-native.git"
   },
   "author": "Juan Carlos <juan2017amaral@gmail.com> (https://github.com/JuanCarllos13)",
   "license": "MIT",
@@ -79,7 +78,7 @@
     "prettier": "^3.0.3",
     "react": "18.3.1",
     "react-native": "0.76.7",
-    "react-native-builder-bob": "^0.37.0",
+    "react-native-builder-bob": "^0.36.0",
     "release-it": "^17.10.0",
     "typescript": "^5.2.2"
   },
@@ -90,10 +89,6 @@
     "react": "*",
     "react-native": "*"
   },
-  "workspaces": [
-    "example"
-  ],
-  "packageManager": "yarn@3.6.1",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
@@ -182,7 +177,7 @@
   "create-react-native-library": {
     "languages": "js",
     "type": "library",
-    "version": "0.46.0"
+    "version": "0.48.0"
   },
   "dependencies": {
     "phosphor-react-native": "^2.3.1"

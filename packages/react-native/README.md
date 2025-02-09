@@ -1,18 +1,18 @@
-# @juancarllos-ui/react-native
+# design-system-react-native
 
 Componentes Mobile
 
 ## Installation
 
 ```sh
-npm install @juancarllos-ui/react-native
+npm install design-system-react-native
 ```
 
 ## Usage
 
 
 ```js
-import { multiply } from '@juancarllos-ui/react-native';
+import { multiply } from 'design-system-react-native';
 
 // ...
 
