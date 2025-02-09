@@ -27,6 +27,7 @@ jobs:
 
       - name: Publish to NPM
         run: |
+          cd ./packages/react-native
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           npm publish
         env:
