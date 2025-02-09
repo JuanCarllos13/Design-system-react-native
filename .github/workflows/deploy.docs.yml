@@ -47,6 +47,10 @@ jobs:
       - name: Build Storybook
         working-directory: ./packages/docs
         run: yarn build-storybook
+      
+      - name: Build react-native
+        working-directory: ./packages/react-native
+        run: yarn install
 
       - name: Deploy Storybook
         working-directory: ./packages/docs
