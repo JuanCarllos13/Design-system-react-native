@@ -60,7 +60,7 @@
   },
   "homepage": "https://github.com/JuanCarllos13/Design-system-react-native#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/package/@juancarllos-ui/react-native"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
