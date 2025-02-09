@@ -26,6 +26,7 @@ jobs:
         run: yarn install
 
       - name: Run Release
+        working-directory: ./packages/react-native
         run: yarn release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
