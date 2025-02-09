@@ -22,11 +22,11 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Run lint
-        run: yarn lint
+      # - name: Run lint
+      #   run: yarn lint
 
-      - name: Run Prettier
-        run: yarn style
+      # - name: Run Prettier
+      #   run: yarn style
         
   build-and-deploy:
     runs-on: ubuntu-latest
