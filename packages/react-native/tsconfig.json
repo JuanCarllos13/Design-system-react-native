@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "design-system-react-native": ["./src/index"]
+      "@juancarllos-ui/react-native": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

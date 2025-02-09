@@ -1,6 +1,6 @@
 {
-  "name": "design-system-react-native",
-  "version": "0.1.0",
+  "name": "@juancarllos-ui/react-native",
+  "version": "1.2.0",
   "description": "Componentes Mobile",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",

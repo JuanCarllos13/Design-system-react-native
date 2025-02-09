@@ -1,7 +1,7 @@
  
 import React, { useState } from 'react';
 import { Text } from 'react-native';
-import { Button, BottomSheetModal } from 'design-system-react-native';
+import { Button, BottomSheetModal } from '@juancarllos-ui/react-native';
 
 export default {
   title: 'Example/BottomSheetModal',

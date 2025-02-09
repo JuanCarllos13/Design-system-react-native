@@ -1,6 +1,6 @@
 import { fn } from '@storybook/test';
 import { View } from 'react-native';
-import { AnimatedButton } from 'design-system-react-native';
+import { AnimatedButton } from '@juancarllos-ui/react-native';
 
 const meta = {
   title: 'Example/AnimatedButton',

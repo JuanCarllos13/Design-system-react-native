@@ -4,7 +4,7 @@ import {
   AnimatedButton,
   Input,
   BottomSheetModal,
-} from "design-system-react-native";
+} from "@juancarllos-ui/react-native";
 import { useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
 

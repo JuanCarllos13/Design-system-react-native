@@ -2,7 +2,7 @@
 import { fn } from '@storybook/test';
 import React from 'react';
 import { View } from 'react-native';
-import { Button } from 'design-system-react-native';
+import { Button } from '@juancarllos-ui/react-native';
 import { ArrowRight, ArrowLeft } from 'phosphor-react-native';
 
 const meta = {

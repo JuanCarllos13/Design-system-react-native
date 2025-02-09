@@ -1,7 +1,7 @@
 
 import { fn } from '@storybook/test';
 import { View } from 'react-native';
-import { Input } from 'design-system-react-native';
+import { Input } from '@juancarllos-ui/react-native';
 
 const meta = {
   title: 'Example/Input',
