@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "rootDir": ".",
+    "outDir": "./lib",
+    "declaration": true,              // Gera arquivos de declaração .d.ts
+    "declarationDir": "./lib",        // Onde os arquivos de declaração .d.ts serão gerados
     "paths": {
       "@juancarllos-ui/react-native": ["./src/index"]
     },
