@@ -25,8 +25,11 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Set up NPM authentication
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: Run Release
         working-directory: ./packages/react-native
         run: yarn release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
