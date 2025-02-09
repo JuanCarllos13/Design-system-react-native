@@ -20,12 +20,14 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
+    "@juancarllos-ui/react-native": "*",
     "@storybook/manager-api": "^8.5.3",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/theming": "^8.5.3",
-    "vite": "6.0.9",
-    "@juancarllos-ui/react-native": "*"
+    "vite": "6.0.9"
   }
 }
