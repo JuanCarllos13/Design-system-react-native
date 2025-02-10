@@ -28,8 +28,14 @@ jobs:
       - name: Set up NPM authentication
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
-      - name: Run Release
-        working-directory: ./packages/react-native
-        run: yarn release
+      # - name: Run Release
+      #   working-directory: ./packages/react-native
+      #   run: yarn release
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to NPM
+        run: |
+          cd ./packages/react-native
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          npm publish
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
