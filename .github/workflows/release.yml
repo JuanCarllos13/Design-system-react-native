@@ -28,13 +28,6 @@ jobs:
       - name: Set up NPM authentication
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
-      # Step to ensure the working directory is clean
-      - name: Ensure working directory is clean
-        run: |
-          git status
-          git add .
-          git commit -m "chore: commit changes before release" || echo "No changes to commit"
-
       - name: Run Release
         working-directory: ./packages/react-native
         run: yarn release
