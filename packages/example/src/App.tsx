@@ -14,7 +14,7 @@ export default function App() {
   const [visible, setVisible] = useState(false);
 
   return (
-    <View style={styles.container}>
+    <View>
       <Text>Result: {result}</Text>
       {/* <Button>
   <Button.Title>Testando</Button.Title>
@@ -22,19 +22,34 @@ export default function App() {
 
       {/* <AnimatedButton onPress={() => setVisible(true)}/> */}
 
-      <Input
+         <Input
+        title="Testando"
+        width="LG"
+ 
+      />
+         <Input
         title="Testando"
         width="LG"
         secure
-        secureColor="#fff"
-        titileColor="#fff"
-        inputContainerStyle={{ borderColor: "#fff" }}
+
       />
+         <Input
+        title="Testando"
+        width="LG"
+        secure
+
+      />
+         <Input
+        title="Testando"
+        width="LG"
+
+      />
+
       {/* <AnimatedButton onPress={() => console.log("entrou")}/> */}
 
-      <BottomSheetModal onClose={() => setVisible(false)} visible={visible}>
+      {/* <BottomSheetModal onClose={() => setVisible(false)} visible={visible}>
         <Text>Result: {result}</Text>
-      </BottomSheetModal>
+      </BottomSheetModal> */}
     </View>
   );
 }
