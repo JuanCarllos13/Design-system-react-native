@@ -20,9 +20,16 @@ export default function App() {
   <Button.Title>Testando</Button.Title>
 </Button> */}
 
-      <AnimatedButton onPress={() => setVisible(true)}/>
+      {/* <AnimatedButton onPress={() => setVisible(true)}/> */}
 
-      {/* <Input title="Testando" width="LG" secure/> */}
+      <Input
+        title="Testando"
+        width="LG"
+        secure
+        secureColor="#fff"
+        titileColor="#fff"
+        inputContainerStyle={{ borderColor: "#fff" }}
+      />
       {/* <AnimatedButton onPress={() => console.log("entrou")}/> */}
 
       <BottomSheetModal onClose={() => setVisible(false)} visible={visible}>
@@ -33,5 +40,5 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center" },
+  container: { flex: 1, justifyContent: "center", backgroundColor: "#000" },
 });

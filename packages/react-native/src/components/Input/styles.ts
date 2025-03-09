@@ -1,11 +1,10 @@
-
 import { StyleSheet } from 'react-native';
 import { colors } from '../../styles';
 
 export const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
-    marginBottom: 30,
+    marginTop: 10,
+    marginBottom: 10,
   },
   containerInput: {
     flexDirection: 'row',
@@ -24,8 +23,9 @@ export const styles = StyleSheet.create({
     color: colors.black,
     fontSize: 16,
     fontFamily: 'bold',
+    marginBottom: 10,
   },
   eye: {
-    marginLeft: -50
-  }
+    marginLeft: -50,
+  },
 });
