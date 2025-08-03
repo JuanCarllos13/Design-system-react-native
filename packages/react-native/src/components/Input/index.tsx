@@ -5,18 +5,20 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Eye, EyeSlash, IconProps, User, Lock } from 'phosphor-react-native';
+import {
+  Eye,
+  EyeSlash,
+  IconProps as TablerIconProps,
+} from 'phosphor-react-native';
 import { styles } from './styles';
 import { colors } from '../../styles';
-
-type IconName = 'user' | 'lock';
 
 type InputProps = {
   placeholder?: string;
   value?: string;
   onChangeText?: (text: string) => void;
   secureTextEntry?: boolean;
-  iconName?: IconName; // substitui leftIcon
+  icon?: React.ComponentType<TablerIconProps>; // ícone opcional
 } & TextInputProps;
 
 export function Input({
@@ -24,7 +26,7 @@ export function Input({
   value,
   onChangeText,
   secureTextEntry = false,
-  iconName,
+  icon: Icon,
   ...rest
 }: InputProps) {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -33,21 +35,10 @@ export function Input({
     setIsPasswordVisible((prev) => !prev);
   };
 
-  const renderLeftIcon = () => {
-    const iconProps: IconProps = {
-      size: 20,
-      color: colors.gray[800],
-    };
-
-    if (iconName === 'user') return <User {...iconProps} />;
-    if (iconName === 'lock') return <Lock {...iconProps} />;
-    return null;
-  };
-
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        {iconName && <View>{renderLeftIcon()}</View>}
+        {Icon && <Icon size={24} color={colors.gray[100]} testID="icon" />}
 
         <TextInput
           placeholder={placeholder}
@@ -55,6 +46,7 @@ export function Input({
           value={value}
           onChangeText={onChangeText}
           secureTextEntry={secureTextEntry && !isPasswordVisible}
+          style={styles.input} // se tiver um estilo
           {...rest}
         />
       </View>
