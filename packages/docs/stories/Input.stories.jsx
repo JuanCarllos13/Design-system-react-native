@@ -25,7 +25,7 @@ export default meta;
 export const Default = {
   args: {
     placeholder: 'Enter your username',
-    leftIconName: 'person',
+    iconName: 'user', // alterado de leftIconName
   },
 };
 
@@ -34,7 +34,7 @@ export const WithPasswordToggle = {
   args: {
     placeholder: 'Enter your password',
     secureTextEntry: true,
-    leftIconName: 'lock',
+    iconName: 'lock', // alterado de leftIconName
   },
 };
 
