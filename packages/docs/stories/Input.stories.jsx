@@ -1,7 +1,8 @@
-
-import { fn } from '@storybook/test';
+import React from 'react';
 import { View } from 'react-native';
 import { Input } from '@juancarllos-ui/react-native';
+import { fn } from '@storybook/test';
+import Octicons from '@expo/vector-icons/Octicons';
 
 const meta = {
   title: 'Example/Input',
@@ -14,38 +15,33 @@ const meta = {
       </View>
     ),
   ],
-  args: { onChangeText: fn() },
+  args: {
+    onChangeText: fn(),
+  },
 };
 
 export default meta;
 
+// 🔹 Story básica com placeholder e ícone à esquerda
 export const Default = {
   args: {
-    title: 'Username',
     placeholder: 'Enter your username',
+    leftIcon: <Octicons name="person" size={20} color="#757474" />,
   },
 };
 
-export const WithSecureText = {
+// 🔹 Com secureTextEntry (mostrar/ocultar senha) e ícone de cadeado à esquerda
+export const WithPasswordToggle = {
   args: {
-    title: 'Password',
     placeholder: 'Enter your password',
-    secure: true,
+    secureTextEntry: true,
+    leftIcon: <Octicons name="lock" size={20} color="#757474" />,
   },
 };
 
-export const SmallWidth = {
+// 🔹 Sem ícone à esquerda, apenas texto comum
+export const NoIcons = {
   args: {
-    title: 'Code',
-    placeholder: 'Enter code',
-    width: 'SM',
-  },
-};
-
-export const LargeHeight = {
-  args: {
-    title: 'Bio',
-    placeholder: 'Enter your bio',
-    height: 'LG',
+    placeholder: 'Just text',
   },
 };

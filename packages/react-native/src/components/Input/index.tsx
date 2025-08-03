@@ -1,75 +1,59 @@
-import { forwardRef, useState } from 'react';
+import Octicons from '@expo/vector-icons/Octicons';
+import React, { useState } from 'react';
 import {
-  Text,
   TextInput,
   TextInputProps,
   TouchableOpacity,
   View,
-  ViewStyle,
 } from 'react-native';
-import { Eye, EyeClosed } from 'phosphor-react-native';
 import { styles } from './styles';
+import { colors } from '../../styles';
 
-type InputProps = TextInputProps & {
-  title: string;
-  titileColor?: string;
-  width?: 'LG' | 'SM';
-  height?: 'LG' | 'SM';
-  secure?: boolean;
-  secureColor?: string;
-  inputContainerStyle?: ViewStyle;
-};
+type InputProps = {
+  placeholder?: string;
+  value?: string;
+  onChangeText?: (text: string) => void;
+  secureTextEntry?: boolean;
+  leftIcon?: React.ReactNode;
+} & TextInputProps;
 
-const Input = forwardRef<TextInput, InputProps>(
-  (
-    {
-      title,
-      width,
-      height,
-      secure = false,
-      secureColor,
-      titileColor,
-      inputContainerStyle,
-      ...rest
-    },
-    ref
-  ) => {
-    const [secureText, setSecureText] = useState(true);
+export function Input({
+  placeholder = '',
+  value,
+  onChangeText,
+  secureTextEntry = false,
+  leftIcon,
+  ...rest
+}: InputProps) {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-    return (
-      <View
-        style={[
-          styles.container,
-          { width: width === 'LG' ? '100%' : '50%' },
-          { height: height === 'LG' ? 60 : 40 },
-        ]}
-      >
-        <Text style={[styles.text, { color: titileColor }]}>{title}</Text>
-        <View style={[styles.containerInput, inputContainerStyle]}>
-          <TextInput
-            style={[styles.inputText, { textAlignVertical: 'top' }]}
-            secureTextEntry={secure ? secureText : false}
-            ref={ref}
-            {...rest}
-          />
-          {secure && (
-            <TouchableOpacity
-              onPress={() => setSecureText(!secureText)}
-              style={styles.eye}
-            >
-              {secureText ? (
-                <EyeClosed color={secureColor} />
-              ) : (
-                <Eye color={secureColor} />
-              )}
-            </TouchableOpacity>
-          )}
-        </View>
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible((prev) => !prev);
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.content}>
+        {leftIcon && <View>{leftIcon}</View>}
+
+        <TextInput
+          placeholder={placeholder}
+          placeholderTextColor={colors.gray[800]}
+          value={value}
+          onChangeText={onChangeText}
+          secureTextEntry={secureTextEntry && !isPasswordVisible}
+          {...rest}
+        />
       </View>
-    );
-  }
-);
-
-Input.displayName = 'Input';
-
-export { Input };
+      {secureTextEntry && (
+        <TouchableOpacity onPress={togglePasswordVisibility}>
+          <Octicons
+            name={isPasswordVisible ? 'eye-closed' : 'eye'}
+            size={24}
+            color={colors.gray[800]}
+          />
+        </TouchableOpacity>
+      )}
+    </View>
+  );
+}

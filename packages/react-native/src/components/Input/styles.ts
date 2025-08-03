@@ -3,29 +3,18 @@ import { colors } from '../../styles';
 
 export const styles = StyleSheet.create({
   container: {
-    marginVertical: 25,
-  },
-  containerInput: {
-    flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderColor: colors.black,
-    borderRadius: 6,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  inputText: {
-    color: colors.black,
     width: '100%',
-    paddingLeft: 4,
-    paddingBottom: 5,
+    height: 65,
+    backgroundColor: colors.gray[700],
+    borderRadius: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginVertical: 20,
+    paddingHorizontal: 20,
   },
-  text: {
-    color: colors.black,
-    fontSize: 16,
-    fontFamily: 'bold',
-    marginBottom: 14,
-  },
-  eye: {
-    marginLeft: -50,
+  content: {
+    flexDirection: 'row',
+    gap: 20,
   },
 });
