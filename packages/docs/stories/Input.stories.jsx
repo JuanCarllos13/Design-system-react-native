@@ -2,7 +2,6 @@ import React from 'react';
 import { View } from 'react-native';
 import { Input } from '@juancarllos-ui/react-native';
 import { fn } from '@storybook/test';
-import Octicons from '@expo/vector-icons/Octicons';
 
 const meta = {
   title: 'Example/Input',
@@ -22,24 +21,24 @@ const meta = {
 
 export default meta;
 
-// 🔹 Story básica com placeholder e ícone à esquerda
+// 🔹 Story básica com ícone à esquerda
 export const Default = {
   args: {
     placeholder: 'Enter your username',
-    leftIcon: <Octicons name="person" size={20} color="#757474" />,
+    leftIconName: 'person',
   },
 };
 
-// 🔹 Com secureTextEntry (mostrar/ocultar senha) e ícone de cadeado à esquerda
+// 🔹 Campo de senha com botão de mostrar/ocultar
 export const WithPasswordToggle = {
   args: {
     placeholder: 'Enter your password',
     secureTextEntry: true,
-    leftIcon: <Octicons name="lock" size={20} color="#757474" />,
+    leftIconName: 'lock',
   },
 };
 
-// 🔹 Sem ícone à esquerda, apenas texto comum
+// 🔹 Sem ícones
 export const NoIcons = {
   args: {
     placeholder: 'Just text',
