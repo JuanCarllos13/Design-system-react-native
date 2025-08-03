@@ -46,7 +46,6 @@ export function Input({
           value={value}
           onChangeText={onChangeText}
           secureTextEntry={secureTextEntry && !isPasswordVisible}
-          style={styles.input} // se tiver um estilo
           {...rest}
         />
       </View>
