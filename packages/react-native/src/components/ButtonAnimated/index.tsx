@@ -99,6 +99,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
           </Text>
         )}
       </Animated.View>
+      </View>
     </TouchableOpacity>
   );
 };
