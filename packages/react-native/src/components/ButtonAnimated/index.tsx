@@ -2,14 +2,16 @@ import React, { useState, useRef } from 'react';
 import {
   TouchableOpacity,
   Text,
+  View,
   ActivityIndicator,
   Animated,
   TouchableOpacityProps,
+  LayoutChangeEvent,
   Dimensions,
 } from 'react-native';
-import { colors } from '../../styles';
 
-const { width: winWidth } = Dimensions.get('window');
+const { width: defaultWidth } = Dimensions.get('window');
+import { colors } from '../../styles';
 
 interface AnimatedButtonProps extends TouchableOpacityProps {
   title?: string;
@@ -19,69 +21,70 @@ interface AnimatedButtonProps extends TouchableOpacityProps {
 const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   title = 'Enviar',
   onPress,
+  style,
   ...rest
 }) => {
   const [loading, setLoading] = useState(false);
+  const containerWidthRef = useRef(defaultWidth);
 
-  const widthAnim = useRef(new Animated.Value(winWidth)).current; 
+  const widthAnim = useRef(new Animated.Value(defaultWidth)).current;
   const borderRadiusAnim = useRef(new Animated.Value(10)).current;
 
   const animate = (toWidth: number, toRadius: number, duration: number) => {
-    // Anima a largura do botão
     Animated.timing(widthAnim, {
       toValue: toWidth,
       duration,
-      useNativeDriver: false, // Usando 'false' porque estamos animando largura e bordas
+      useNativeDriver: false,
     }).start();
 
-    // Anima a borda do botão
     Animated.timing(borderRadiusAnim, {
       toValue: toRadius,
       duration,
-      useNativeDriver: false, // Usando 'false' para animação de layout
+      useNativeDriver: false,
     }).start();
   };
 
+  const handleLayout = (event: LayoutChangeEvent) => {
+    const { width } = event.nativeEvent.layout;
+    if (width > 0 && containerWidthRef.current !== width) {
+      containerWidthRef.current = width;
+      widthAnim.setValue(width);
+    }
+  };
+
   const handlePress = () => {
+    const fullWidth = containerWidthRef.current || 300;
     setLoading(true);
-    animate(50, 25, 300); // Encolhe o botão para o meio
+    animate(50, 25, 300);
 
     onPress();
 
     setTimeout(() => {
       setLoading(false);
-      animate(winWidth, 10, 300); // Volta ao tamanho original
+      animate(fullWidth, 10, 300);
     }, 2000);
   };
-
-  // Calculando marginLeft para centralizar o botão na tela
-  // Quando largura = 50: marginLeft = (winWidth - 50) / 2
-  // Quando largura = winWidth: marginLeft = 0
-  const animatedMarginLeft = widthAnim.interpolate({
-    inputRange: [50, winWidth],
-    outputRange: [(winWidth - 50) / 2, 0],
-    extrapolate: 'clamp',
-  });
 
   return (
     <TouchableOpacity
       onPress={handlePress}
+      onLayout={handleLayout}
       activeOpacity={0.8}
       disabled={loading}
-      style={{ width: '100%' }}
+      style={[{ width: '100%' }, style]}
       {...rest}
     >
-      <Animated.View
-        style={{
-          width: widthAnim,
-          height: 60,
-          borderRadius: borderRadiusAnim,
-          backgroundColor: colors.blue.base,
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginLeft: animatedMarginLeft,
-        }}
-      >
+      <View style={{ width: '100%', alignItems: 'center' }}>
+        <Animated.View
+          style={{
+            width: widthAnim,
+            height: 60,
+            borderRadius: borderRadiusAnim,
+            backgroundColor: colors.blue.base,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
         {loading ? (
           <ActivityIndicator color={colors.gray[100]} />
         ) : (
