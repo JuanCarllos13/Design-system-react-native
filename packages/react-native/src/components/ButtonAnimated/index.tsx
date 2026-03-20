@@ -1,56 +1,63 @@
-import React, { useState, useRef } from 'react';
+import { useRef, useState } from "react";
 import {
-  TouchableOpacity,
-  Text,
-  ActivityIndicator,
   Animated,
-  TouchableOpacityProps,
-  LayoutChangeEvent,
   Dimensions,
-} from 'react-native';
+  LayoutChangeEvent,
+  Pressable,
+  StyleProp,
+  Text,
+  View,
+  ViewStyle,
+  ActivityIndicator,
+} from "react-native";
 
-const { width: defaultWidth } = Dimensions.get('window');
-import { colors } from '../../styles';
+import { colors } from "../../styles";
 
-interface AnimatedButtonProps extends TouchableOpacityProps {
-  title?: string;
+interface AnimatedButtonProps {
+  title: string;
   onPress: () => void;
+  disabled?: boolean;
+  style?: StyleProp<ViewStyle>;
 }
 
-const AnimatedButton: React.FC<AnimatedButtonProps> = ({
-  title = 'Enviar',
+export function AnimatedButton({
+  title,
   onPress,
+  disabled = false,
   style,
-  ...rest
-}) => {
+}: AnimatedButtonProps) {
   const [loading, setLoading] = useState(false);
-  const [containerWidth, setContainerWidth] = useState(defaultWidth);
-  const containerWidthRef = useRef(defaultWidth);
+  const layoutWidthRef = useRef(0);
 
-  const widthAnim = useRef(new Animated.Value(defaultWidth)).current;
-  const heightAnim = useRef(new Animated.Value(60)).current;
-  const borderRadiusAnim = useRef(new Animated.Value(10)).current;
-
-  const animate = (
-    toWidth: number,
-    toHeight: number,
-    toRadius: number,
-    duration: number
-  ) => {
+  const widthAnim = useRef(new Animated.Value(300)).current;
+  const heightAnim = useRef(new Animated.Value(56)).current;
+  const animateToCircle = () => {
     Animated.parallel([
       Animated.timing(widthAnim, {
-        toValue: toWidth,
-        duration,
+        toValue: 56,
+        duration: 300,
         useNativeDriver: false,
       }),
       Animated.timing(heightAnim, {
-        toValue: toHeight,
-        duration,
+        toValue: 56,
+        duration: 300,
         useNativeDriver: false,
       }),
-      Animated.timing(borderRadiusAnim, {
-        toValue: toRadius,
-        duration,
+    ]).start();
+  };
+
+  const animateToFull = () => {
+    const targetWidth =
+      layoutWidthRef.current || Dimensions.get("window").width - 32;
+    Animated.parallel([
+      Animated.timing(widthAnim, {
+        toValue: targetWidth,
+        duration: 300,
+        useNativeDriver: false,
+      }),
+      Animated.timing(heightAnim, {
+        toValue: 56,
+        duration: 300,
         useNativeDriver: false,
       }),
     ]).start();
@@ -59,66 +66,68 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   const handleLayout = (event: LayoutChangeEvent) => {
     const { width } = event.nativeEvent.layout;
     if (width > 0) {
-      containerWidthRef.current = width;
-      setContainerWidth(width);
+      layoutWidthRef.current = width;
       widthAnim.setValue(width);
     }
   };
 
   const handlePress = () => {
+    if (disabled || loading) return;
+
     setLoading(true);
-    animate(50, 50, 25, 300); // Encolhe e fica redondo (círculo perfeito)
+    animateToCircle();
 
     onPress();
 
     setTimeout(() => {
       setLoading(false);
-      animate(containerWidthRef.current, 60, 10, 300);
+      animateToFull();
     }, 2000);
   };
 
-  const marginLeft = widthAnim.interpolate({
-    inputRange: [50, containerWidth],
-    outputRange: [(containerWidth - 50) / 2, 0],
-    extrapolate: 'clamp',
-  });
-
   return (
-    <TouchableOpacity
-      onPress={handlePress}
+    <View
       onLayout={handleLayout}
-      activeOpacity={0.8}
-      disabled={loading}
-      style={[{ width: '100%' }, style]}
-      {...rest}
+      style={[
+        {
+          width: "100%",
+          alignSelf: "stretch",
+          alignItems: "center",
+          justifyContent: "center",
+        },
+        style,
+      ]}
     >
-      <Animated.View
-        style={{
-          width: widthAnim,
-          height: heightAnim,
-          borderRadius: borderRadiusAnim,
-          backgroundColor: colors.blue.base,
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginLeft: marginLeft,
-        }}
+      <Pressable
+        onPress={handlePress}
+        disabled={disabled || loading}
+        style={{ alignItems: "center", justifyContent: "center" }}
       >
-        {loading ? (
-          <ActivityIndicator color={colors.gray[100]} />
-        ) : (
-          <Text
-            style={{
-              color: colors.gray[100],
-              fontSize: 16,
-              fontWeight: 'bold',
-            }}
-          >
-            {title}
-          </Text>
-        )}
-      </Animated.View>
-    </TouchableOpacity>
+        <Animated.View
+          style={{
+            width: widthAnim,
+            height: heightAnim,
+            borderRadius: 28,
+            backgroundColor: colors.blue.base,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {loading ? (
+            <ActivityIndicator color={colors.gray[100]} size="small" />
+          ) : (
+            <Text
+              style={{
+                color: colors.gray[100],
+                fontSize: 16,
+                fontWeight: "bold",
+              }}
+            >
+              {title}
+            </Text>
+          )}
+        </Animated.View>
+      </Pressable>
+    </View>
   );
-};
-
-export { AnimatedButton };
+}
