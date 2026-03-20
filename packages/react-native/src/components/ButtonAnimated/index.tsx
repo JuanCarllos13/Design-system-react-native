@@ -54,11 +54,13 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
     }, 2000);
   };
 
-  // Calculando marginLeft com a interpolação do widthAnim
+  // Calculando marginLeft para centralizar o botão na tela
+  // Quando largura = 50: marginLeft = (winWidth - 50) / 2
+  // Quando largura = winWidth: marginLeft = 0
   const animatedMarginLeft = widthAnim.interpolate({
-    inputRange: [50, winWidth], // O valor que o width pode ter
-    outputRange: [winWidth / 2 - 25, 0], // Ajuste para centralizar a animação
-    extrapolate: 'clamp', // Impede que o valor ultrapasse o range
+    inputRange: [50, winWidth],
+    outputRange: [(winWidth - 50) / 2, 0],
+    extrapolate: 'clamp',
   });
 
   return (
@@ -66,6 +68,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
       onPress={handlePress}
       activeOpacity={0.8}
       disabled={loading}
+      style={{ width: '100%' }}
       {...rest}
     >
       <Animated.View
@@ -76,7 +79,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
           backgroundColor: colors.blue.base,
           justifyContent: 'center',
           alignItems: 'center',
-          marginLeft: animatedMarginLeft, // Aqui usamos o valor interpolado
+          marginLeft: animatedMarginLeft,
         }}
       >
         {loading ? (
