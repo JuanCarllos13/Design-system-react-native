@@ -4,6 +4,7 @@ import {
   Dimensions,
   LayoutChangeEvent,
   Pressable,
+  PressableProps,
   StyleProp,
   Text,
   View,
@@ -13,11 +14,16 @@ import {
 
 import { colors } from "../../styles";
 
-interface AnimatedButtonProps {
+interface AnimatedButtonProps
+  extends Omit<
+    PressableProps,
+    "style" | "children" | "onPress"
+  > {
   title: string;
   onPress: () => void;
-  disabled?: boolean;
   style?: StyleProp<ViewStyle>;
+  backgroundColor?: string;
+  textColor?: string;
 }
 
 export function AnimatedButton({
@@ -25,6 +31,9 @@ export function AnimatedButton({
   onPress,
   disabled = false,
   style,
+  backgroundColor = colors.blue.base,
+  textColor = colors.gray[100],
+  ...rest
 }: AnimatedButtonProps) {
   const [loading, setLoading] = useState(false);
   const layoutWidthRef = useRef(0);
@@ -102,23 +111,24 @@ export function AnimatedButton({
         onPress={handlePress}
         disabled={disabled || loading}
         style={{ alignItems: "center", justifyContent: "center" }}
+        {...rest}
       >
         <Animated.View
           style={{
             width: widthAnim,
             height: heightAnim,
             borderRadius: 28,
-            backgroundColor: colors.blue.base,
+            backgroundColor,
             alignItems: "center",
             justifyContent: "center",
           }}
         >
           {loading ? (
-            <ActivityIndicator color={colors.gray[100]} size="small" />
+            <ActivityIndicator color={textColor} size="small" />
           ) : (
             <Text
               style={{
-                color: colors.gray[100],
+                color: textColor,
                 fontSize: 16,
                 fontWeight: "bold",
               }}
